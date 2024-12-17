@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
-</body>
-</html>
+<main>
+    <section class="welcome-section">
+        <h1>Welcome to Task Manager</h1>
+        <p>Organize your tasks, manage your time, and achieve your goals efficiently.</p>
+        <a href="{% url 'task_list' %}" class="cta-btn">View Your Tasks</a>
+    </section>
+
+    <section class="features-section">
+        <div class="feature">
+            <h2><a href="{% url 'category-list' %}">Organize</a></h2>
+            <p>See the categories of your tasks and keep everything in order.</p>
+        </div>
+        <div class="feature">
+            <h2><a href="{% url 'task_create' %}">Track</a></h2>
+            <p>Set due dates, mark tasks as completed, and track your progress.</p>
+        </div>
+        <div class="feature">
+            <h2><a href="{% url 'dashboard' %}">Analyze</a></h2>
+            <p>Use your personal dashboard to visualize your task statistics.</p>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
